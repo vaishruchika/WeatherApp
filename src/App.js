@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {useDispatch, useSelector} from "react-redux";
+import {useRef} from "react";
+import {getWeatherDetails} from "./Store/detailsAction";
 
 function App() {
+  const dispatch=useDispatch()
+  const inputRef=useRef();
+  const data=useSelector((state)=> state.weatherDetails.data)
+  const loading=useSelector((state)=> state.weatherDetails.loading)
+  const error=useSelector((state)=> state.weatherDetails.error)
+
+  const onSearch=()=>{
+    dispatch(getWeatherDetails(inputRef.current.value));
+  };
+
   return (
+      <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input ref={inputRef} placeholder={'Search City Here'} />
+      <button onClick={onSearch}>Search</button>
     </div>
+        {loading && <h1>Loading...</h1>}
+        {!loading && data && <p>{JSON.stringify(data)}</p>}
+        {error && <h4>error</h4>}
+
+      </>
   );
 }
 
