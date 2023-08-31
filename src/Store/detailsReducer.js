@@ -7,15 +7,17 @@ export const weatherDetails = (state = {
 }, action) => {
     switch (action.type) {
         case WEATHER_DETAILS:
-            return { ...state,
+            return {
+                ...state,
                 loading: true,
-                error:''}
+                error: ''
+            }
         case SET_WEATHER_DETAILS:
             return {
-            ...state,
-            data: action.data,
-            loading: false
-        }
+                ...state,
+                data: action.data,
+                loading: false
+            }
         case REQUEST_FAILED:
             return {
                 ...state,
