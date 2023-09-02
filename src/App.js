@@ -9,7 +9,6 @@ function App() {
     const inputRef = useRef();
     const data = useSelector((state) => state.weatherDetails.data)
     const loading = useSelector((state) => state.weatherDetails.loading)
-
     const error = useSelector((state) => state.weatherDetails.error)
 
     const onSearch = () => dispatch(getWeatherDetails(inputRef.current.value));
