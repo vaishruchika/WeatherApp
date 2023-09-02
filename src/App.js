@@ -30,7 +30,6 @@ function App() {
                   role="status"></span>
         </div> : error ? <div className={'error'}><h3>Error: {error.message}</h3></div> : Object.keys(data).length > 0 ?
             <div className="col-md-12 text-center mt-5">
-
                 <div className="shadow rounded wetherResultBox">
                     <img className="weathorIcon"
                          src={data?.current?.condition?.icon} alt={data?.current?.condition?.text}/>
