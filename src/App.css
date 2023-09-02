@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     height: 40vh;
+    gap: 20px;
 }
 
 .heading {
@@ -47,4 +48,11 @@
     margin-top: 200px;
     display: flex;
     justify-content: center;
+}
+
+.container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

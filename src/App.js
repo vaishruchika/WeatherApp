@@ -16,8 +16,7 @@ function App() {
     return <div className="col-md-12">
         <div className="wetherBg">
             <h1 className="heading">Weather App</h1>
-
-            <div className="d-grid gap-3 col-3 mt-4">
+            <div className={'container col-xs-12 col-sm-8 col-md-6 col-lg-4'}>
                 <input type="text"
                        ref={inputRef}/>
                 <button className="btn btn-primary" type="button"
