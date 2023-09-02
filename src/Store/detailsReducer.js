@@ -1,4 +1,4 @@
-import {REQUEST_FAILED, SET_WEATHER_DETAILS, WEATHER_DETAILS} from "./constant";
+import {GET_WEATHER_DETAILS, REQUEST_FAILED, SET_WEATHER_DETAILS} from "./constant";
 
 export const weatherDetails = (state = {
     data: [],
@@ -6,7 +6,7 @@ export const weatherDetails = (state = {
     error: ''
 }, action) => {
     switch (action.type) {
-        case WEATHER_DETAILS:
+        case GET_WEATHER_DETAILS:
             return {
                 ...state,
                 loading: true,
